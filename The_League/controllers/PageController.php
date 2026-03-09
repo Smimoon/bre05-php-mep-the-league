@@ -6,8 +6,10 @@
         }
         
         public function home() : void{
-            // $manager = new TeamsManager();
-            // $data = $manager -> findOne(1);
+            $manager = new TeamsManager();
+            $manager2 = new PlayerManager();
+            
+            $data = ["team" => $manager -> findOne(1), "players" => $manager2 -> findAll()];
             
             $this -> render("home", $data);
         }
