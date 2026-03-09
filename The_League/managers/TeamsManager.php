@@ -39,7 +39,7 @@
             $teams = [];
             
             foreach($results as $result){
-                $teams[] = new Team($result["name"], $result["description"], $result["id"], $result["logo"]);
+                $teams[] = new Team($result["name"], $result["description"], $result["url"], $result["id"] );
             }
             
             return $teams;
