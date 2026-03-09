@@ -4,6 +4,7 @@
 @import "elements/header.css";
 @import "elements/hero.css";
 @import "elements/teamALaUne.css";
+@import "elements/playersALaUne.css";
 
 /**************************************************/
 /*TOOLS*/
@@ -35,6 +36,7 @@ h2{
     font-weight: 800;
     font-size: 8rem;
     color: var(--white);
+    text-transform: uppercase;
 }
 
 h3{
@@ -46,4 +48,3 @@ h3{
 /**************************************************/
 /*LAYOUTS*/
 /**************************************************/
-

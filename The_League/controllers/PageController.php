@@ -9,7 +9,7 @@
             $manager = new TeamsManager();
             $manager2 = new PlayerManager();
             
-            $data = ["team" => $manager -> findOne(1), "players" => $manager2 -> findAll()];
+            $data = ["team" => $manager -> findAll(), "players" => $manager2 -> findAll()];
             
             $this -> render("home", $data);
         }
