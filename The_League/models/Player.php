@@ -1,6 +1,6 @@
 <?php
     class Player {
-        public function __construct(private string $nickname, private string $bio, private ? int $id = NULL, private ? int $portrait = NULL, private ? int $team = NULL)
+        public function __construct(private string $nickname, private string $bio, private string $portrait, private string $team, private ? int $id = NULL)
         {
             
         }
@@ -28,19 +28,19 @@
         {
             $this->bio = $bio;
         }
-        public function getPortrait():int
+        public function getPortrait():string
         {
             return $this->portrait;
         }
-        public function setPortrait(int $portrait):void
+        public function setPortrait(string $portrait):void
         {
             $this->portrait = $portrait;
         }
-        public function getTeam():int
+        public function getTeam():string
         {
             return $this->team;
         }
-        public function setTeam(int $team):void
+        public function setTeam(string $team):void
         {
             $this->team = $team;
         }

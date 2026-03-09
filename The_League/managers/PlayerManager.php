@@ -20,8 +20,8 @@
             $results = $query -> fetch(PDO::FETCH_ASSOC);
             
             if($results!== false){
-                $team = new Player ($results["nickname"], $results["bio"], $results["url"], $results["name"], $results["id"]);
-                return $team;
+                $player = new Player ($results["nickname"], $results["bio"], $results["url"], $results["name"], $results["id"]);
+                return $player;
             }
             else{
                 return null;
