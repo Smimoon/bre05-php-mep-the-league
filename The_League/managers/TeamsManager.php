@@ -11,9 +11,13 @@
             $parameters = [
                 'id'=>$id
             ];
+            
+            $query -> execute($parameters);
+            $results = $query -> fetch(PDO::FETCH_ASSOC);
+            
             if($results!== false){
                 $team = new Team ($results["name"], $results["description"], $results["id"], $results["logo"]);
-                return $user;
+                return $team;
             }
             else{
                 return null;
