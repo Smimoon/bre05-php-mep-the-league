@@ -6,22 +6,49 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 2rem auto;
+    margin: 4rem auto;
     width: 80%;
+    h3{
+        color: var(--yellow);
+    }
     .content-team{
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         width: 100%;
-        margin-top: 2.5rem;
+        margin-top: 5rem;
+        height: 500px;
+        .logo-team-alaune{
+            height: 80%;
+        }
         .grid-team{
             display: grid;
+            grid-template: 0.2fr 0.2fr 2.6fr/repeat(3, 1fr);
             width: 60%;
-            grid-template: 0.5fr 0.5fr 2fr/repeat(3, 1fr);
+            height: 80%;
+            gap: 2rem;
             h4{
                 grid-column: 1 / 4;
+                color: var(--yellow);
+                font-family: "Ubuntu";
+                font-size: 2.4rem;
             }
             .players{
                 grid-column: 1 / 4;
+                font-family: "Ubuntu";
+                font-size: 1.8rem;
+                color: var(--white);
+            }
+            figure{
+                img{
+                    width: 100%;
+                }
+                p{
+                    color: var(--pink);
+                    font-family: "Ubuntu";
+                    font-size: 1.8rem;
+                    text-align: right;
+                    text-transform: uppercase;
+                }
             }
         }
     }

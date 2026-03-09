@@ -1,15 +1,15 @@
 <section class="teamALaUne">
     <h3>La Team à la une</h3>
     <div class="content-team">
-        <img src="<?= $data["team"] -> getLogo() ?>"></img>
+        <img src="<?= $data["team"] -> getLogo() ?>" alt ="logo de <?= $data["team"] -> getName() ?>" class="logo-team-alaune"></img>
         <div class="grid-team">
-            <h4>Angry Owls</h4>
+            <h4><?= $data["team"] -> getName() ?></h4>
             <p class="players">Les players</p>
             <?php foreach($data["players"] as $player){ ?>
                 <?php if($player -> getTeam() === "Angry Owls") { ?>
                     <figure>
                         <img src="<?= $player -> getPortrait() ?>" alt="Portrait de <?= $player -> getNickname() ?>">
-                        <p<?= $player -> getNickname() ?></p>
+                        <p><?= $player -> getNickname() ?></p>
                     </figure>
                 <?php } ?>
             <?php } ?>
