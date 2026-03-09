@@ -6,7 +6,7 @@
         {
             $host = "db.3wa.io";
             $port = "3306";
-            $dbname = "simonlaroche_mvcj3";
+            $dbname = "simonlaroche_the_league";
             $connexionString = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8";
     
             $user = "simonlaroche";

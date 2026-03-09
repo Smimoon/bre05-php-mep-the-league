@@ -1,6 +1,6 @@
 <?php
     class Team {
-        public function __construct(private string $name, private string $description, private ? int $id = NULL, private ? int $logo = NULL)
+        public function __construct(private string $name, private string $description, private string $logo, private ? int $id = NULL)
         {
             
         }
@@ -28,11 +28,11 @@
         {
             $this->description = $description;
         }
-        public function getLogo():int
+        public function getLogo():string
         {
             return $this->logo;
         }
-        public function setLogo(int $logo):void
+        public function setLogo(string $logo):void
         {
             $this->logo = $logo;
         }
