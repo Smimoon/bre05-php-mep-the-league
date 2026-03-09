@@ -8,12 +8,12 @@
         public function findOne(int $id) : ?game
         {
             $query = $this->db->prepare(
-                'SELECT *, teams.name
+                'SELECT games.*, teams.name
                 FROM games 
                 JOIN teams
                 ON teams.id = games.team_01
+                JOIN teams
                 ON teams.id = games.team_02
-                ON teams.id = games.winner
                 WHERE games.id = :id
                 ');
             $parameters = [
@@ -33,12 +33,13 @@
         public function findAll():array
         {
             $query = $this->db->prepare(
-                'SELECT *, teams.name
+                'SELECT games.*, teams.name
                 FROM games 
                 JOIN teams
                 ON teams.id = games.team_01
+                JOIN teams
                 ON teams.id = games.team_02
-                ON teams.id = games.winner
+                
                 ');
             $query->execute();
             $results = $query->fetchAll(PDO::FETCH_ASSOC);
