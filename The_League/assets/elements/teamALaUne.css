@@ -7,15 +7,17 @@
     justify-content: center;
     align-items: center;
     margin: 4rem auto;
-    width: 80%;
+    width: 90%;
+    padding: 3rem;
+    border: 1px solid var(--darkGrey);
     h3{
         color: var(--yellow);
     }
     .content-team{
         display: flex;
         justify-content: space-between;
+        align-items: center;
         width: 100%;
-        margin-top: 5rem;
         height: 500px;
         .logo-team-alaune{
             height: 80%;

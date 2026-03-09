@@ -5,7 +5,7 @@
         protected function render(string $template, array $data) : void
         {
             require "templates/layout.phtml";
-            // var_dump($data["players"]);
+            // var_dump($data);
         }
     
         protected function redirect(string $route) : void

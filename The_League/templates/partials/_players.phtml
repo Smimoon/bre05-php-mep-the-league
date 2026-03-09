@@ -1,6 +1,14 @@
-<section class="container">
+<section class="playersALaUne">
     <h3>Les players à la une</h3>
-    <figure class="card">
-        
-    </figure>
+    <div class="players-grid">
+        <?php foreach($data["players"] as $player) { ?>
+            <?php if($player -> getNickname() === "Dundy" || $player -> getNickname() === "Wofin" || $player -> getNickname() === "Stonk") { ?>
+                <figure class="card">
+                    <img src="<?= $player -> getPortrait()?>" alt="Portrait de <?= $player -> getNickname() ?>">
+                    <h5><?= $player -> getNickname() ?></h5>
+                    <p><?= $player -> getTeam() ?></p>
+                </figure>
+            <?php } ?>
+        <?php } ?>
+    </div>
 </section>
