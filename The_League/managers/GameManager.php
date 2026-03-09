@@ -8,14 +8,14 @@
         public function findOne(int $id) : ?game
         {
             $query = $this->db->prepare(
-                'SELECT games.*, teams.name
+                'SELECT games. *,
+                team1.name AS team_1_name,
+                team2.name AS team_2_name
                 FROM games 
-                JOIN teams
-                ON teams.id = games.team_01
-                JOIN teams
-                ON teams.id = games.team_02
-                WHERE games.id = :id
-                ');
+                JOIN teams AS team1 ON team1.id = games.team_1
+                JOIN teams AS team2 ON team2.id = games.team_2
+                WHERE games.id = :id'
+            );
             $parameters = [
                 'id' => $id
             ];
@@ -33,14 +33,14 @@
         public function findAll():array
         {
             $query = $this->db->prepare(
-                'SELECT games.*, teams.name
+                'SELECT games. *,
+                team1.name AS team_1_name,
+                team2.name AS team_2_name
                 FROM games 
-                JOIN teams
-                ON teams.id = games.team_01
-                JOIN teams
-                ON teams.id = games.team_02
+                JOIN teams AS team1 ON team1.id = games.team_1
+                JOIN teams AS team2 ON team2.id = games.team_2'
                 
-                ');
+                );
             $query->execute();
             $results = $query->fetchAll(PDO::FETCH_ASSOC);
             $games = [];
