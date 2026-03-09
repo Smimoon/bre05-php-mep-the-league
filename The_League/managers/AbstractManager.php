@@ -1,16 +1,22 @@
 <?php
-    $host = "db.3wa.io";
-    $port = "3306";
-    $dbname = "simonlaroche_the_league";
-    $connexionString = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8";
+    abstract class AbstractManager{
+        protected PDO $db;
     
-    $user = "simonlaroche";
-    $password = "8d907e25f2f03cd13dc353d2ae9f5891";
+        public function __construct()
+        {
+            $host = "db.3wa.io";
+            $port = "3306";
+            $dbname = "simonlaroche_mvcj3";
+            $connexionString = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8";
     
-    $db = new PDO(
-        $connexionString,
-        $user,
-        $password,
-    );
+            $user = "simonlaroche";
+            $password = "8d907e25f2f03cd13dc353d2ae9f5891";
     
+            $this->db = new PDO(
+                $connexionString,
+                $user,
+                $password
+            );
+        }
+    }
 ?>

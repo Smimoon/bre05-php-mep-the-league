@@ -1,0 +1,38 @@
+<?php
+    class TeamsManager extends AbstractManager {
+        public function __construct()
+        {
+            parent::_construct();
+        }
+        
+        public function findOne(int $id) : ?team
+        {
+            $query = $this->db->prepare('SELECT * FROM teams JOIN media ON media.id = teams.logo WHERE id = :id');
+            $parameters = [
+                'id'=>$id
+            ];
+            if($results!== false){
+                $team = new Team ($results["name"], $results["description"], $results["id"], $results["logo"]);
+                return $user;
+            }
+            else{
+                return null;
+            }
+        }
+        public function findAll() : array
+        {
+            $query = $this->db->prepare('SELECT * FROM teams JOIN media ON media.id = teams.logo ');
+            
+            $query -> execute();
+            $results = $query -> fetchAll(PDO::FETCH_ASSOC);
+            
+            $teams = [];
+            
+            foreach($results as $result){
+                $teams[] = new Team($result["name"], $result["description"], $result["id"], $result["logo"]);
+            }
+            
+            return $teams;
+        }
+    }
+?>
