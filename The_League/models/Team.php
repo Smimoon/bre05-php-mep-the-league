@@ -1,6 +1,6 @@
 <?php
     class Team {
-        public function __construct(private ? int $id = NULL, private string $name, private string $description, private ? int $logo = NULL)
+        public function __construct(private string $name, private string $description, private ? int $id = NULL, private ? int $logo = NULL)
         {
             
         }
