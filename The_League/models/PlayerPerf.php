@@ -32,6 +32,15 @@
             $this->points = $points;
         }
         
+        public function getAssists():int
+        {
+            return $this->assists;
+        }
+        public function setAssists(int $assists):void
+        {
+            $this->assists = $assists;
+        }
+        
         public function getId():int
         {
             return $this->id;
