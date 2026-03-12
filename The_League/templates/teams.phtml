@@ -6,7 +6,7 @@
                 <img src="<?= $team -> getLogo() ?>" alt="Logo de <?= $team -> getName() ?>">
                 <h5><?= $team -> getName() ?></h5>
                 <p><?= $team -> getDescription() ?></p>
-                <a href="#"><button type="button">Découvrez <?= $team -> getName() ?></button></a>
+                <a href="index.php?route=teamDetails&team_id=<?= $team->getId()?>"><button type="button">Découvrez <?= $team -> getName() ?></button></a>
             </div>
         <?php } ?>
     </div>
