@@ -11,9 +11,9 @@
                         $ctrl = new PageController();
                         $ctrl -> teams();
                 }
-                else if($_GET["route"] === "matchs"){
+                else if($_GET["route"] === "games"){
                     $ctrl = new PageController();
-                    $ctrl -> matchs();
+                    $ctrl -> games();
                 }
                 else if($_GET["route"] === "players"){
                     $ctrl = new PageController();

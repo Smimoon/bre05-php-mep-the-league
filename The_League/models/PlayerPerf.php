@@ -1,5 +1,5 @@
 <?php
-    class PlayerPerformance {
+    class PlayerPerf {
         public function __construct(private Player $player, private Game $game, private int $points, private int $assits, private ? int $id)
         {
             

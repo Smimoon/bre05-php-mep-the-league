@@ -30,11 +30,13 @@
             $this -> render("players", $data);
         }
         
-        public function matchs(){
-            $mm = new MatchManager();
-            $data = $mm -> findAll();
+        public function games(){
+            $tm = new TeamsManager();
+            $mm = new GameManager();
             
-            $this -> render("matchs", $data);
+            $data = ["games" => $mm -> findAll(), "teams" => $tm -> findAll()];
+            
+            $this -> render("games", $data);
         }
         
         public function teamDetails(string $id){
@@ -47,8 +49,10 @@
         
         public function playerDetails(string $id){
             $pm = new PlayerManager();
+            $ppm = new PlayerPerfManager();
             $intId = intval($id);
-            $data = $pm -> findOne($intId);
+            
+            $data = ["player" => $pm -> findOne($intId), "players" => $pm -> findAll(), "perfs" => $ppm -> findOne($intId)];
             
             $this -> render("playerDetails", $data);
         }
