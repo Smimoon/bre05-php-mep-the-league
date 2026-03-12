@@ -8,7 +8,7 @@
         public function findOne(int $id) : ?player
         {
             $query = $this->db->prepare(
-                'SELECT *, media.url, teams.name
+                'SELECT players.*, media.url, teams.name
                 FROM players
                 JOIN media ON media.id = players.portrait
                 JOIN teams ON teams.id = players.team
@@ -31,7 +31,7 @@
         public function findAll() : array
         {
             $query = $this->db->prepare(
-                'SELECT *, media.url, teams.name
+                'SELECT players.*, media.url, teams.name
                 FROM players
                 JOIN media ON media.id = players.portrait
                 JOIN teams ON teams.id = players.team

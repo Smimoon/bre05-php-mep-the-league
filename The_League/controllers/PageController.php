@@ -57,6 +57,15 @@
             $this -> render("playerDetails", $data);
         }
         
+        public function gameDetails(string $id){
+            $ppm = new PlayerPerfManager();
+            $gm = new GameManager();
+            $intId = intval($id);
+            
+            $data=["game" => $gm->findOne($intId), $ppm->findAll()];
+            
+            $this-> render("gameDetails", $data);
+        }
         public function notFound(){
             $this -> render("notFound", []);
         }

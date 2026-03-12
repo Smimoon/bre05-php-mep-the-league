@@ -27,6 +27,10 @@
                     $ctrl = new PageController();
                     $ctrl -> playerDetails($_GET["player_id"]);
                 }
+                else if($_GET["route"] === "gameDetails" && $_GET["game_id"]){
+                    $ctrl = new PageController();
+                    $ctrl -> gameDetails($_GET["game_id"]);
+                }
                 else{
                     $ctrl = new PageController();
                     $ctrl -> notFound();
