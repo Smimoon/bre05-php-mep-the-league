@@ -6,6 +6,8 @@
 @import "elements/teamALaUne.css";
 @import "elements/playersALaUne.css";
 @import "elements/matchALaUne.css";
+@import "elements/teams.css";
+@import "elements/players.css";
 
 /**************************************************/
 /*TOOLS*/
@@ -35,7 +37,7 @@ h1{
 
 h2{
     font-weight: 800;
-    font-size: 8rem;
+    font-size: 6rem;
     color: var(--white);
     text-transform: uppercase;
 }

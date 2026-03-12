@@ -17,7 +17,17 @@
         }
         
         public function teams(){
-            $this -> render("teams", []);
+            $tm = new TeamsManager();
+            $data = $tm -> findAll();
+            
+            $this -> render("teams", $data);
+        }
+        
+        public function players(){
+            $pm = new PlayerManager();
+            $data = $pm -> findAll();
+            
+            $this -> render("players", $data);
         }
     
         

@@ -34,7 +34,9 @@
                 'SELECT *, media.url, teams.name
                 FROM players
                 JOIN media ON media.id = players.portrait
-                JOIN teams ON teams.id = players.team');
+                JOIN teams ON teams.id = players.team
+                ORDER BY nickname
+                ');
             $query->execute();
             $results = $query -> fetchAll(PDO::FETCH_ASSOC);
             $players=[];
