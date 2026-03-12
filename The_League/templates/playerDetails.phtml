@@ -1,7 +1,7 @@
 <main class="player">
     <div class="portrait">
-        <h2></h2>
-        <img src="" alt="">
+        <h2><?= $data["player"] -> getNickname() ?></h2>
+        <img src="<?= $data["player"] -> getPortrait() ?>" alt="Portrait de <?= $data["player"] -> getNickname() ?>">
     </div>
     <div class="perfs">
         <h2>Ses performances</h2>
@@ -13,18 +13,27 @@
                 <td>Victoire ?</td>
             </th>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <?php foreach($data["perfs"] as $perf) { ?>
+                    <?php if($perf -> getPlayer() -> getId() === $data["player"] -> getId()) { {?>
+                        <td><?= $perf -> getGame() -> getTeam_1() ?></td>
+                        <td><?= $perf -> getPoints() ?></td>
+                        <td><?= $perf -> getAssists()?></td>
+                        <td>oui</td>
+                    <?php } ?>
+                <?php } ?>
             </tr>
         </table>
     </div>
     <div class="sa-team">
-        <div class="card-player">
-            <img src="" alt="">
-            <h5></h5>
-            <a href=""><button type="button">Découvrez</button></a>
-        </div>
+        <?php foreach($data["players"] as $player) { ?>
+            <?php if($player -> getTeam() === $data["player"] -> getTeam()
+            && $player -> getNickname() !== $data["player"] -> getNickname()) { ?>
+                <div class="card-player">
+                    <img src="<?= $player -> getPortrait() ?>" alt="Portrait de <?= $player -> getNickname() ?>">
+                    <h5><?= $player -> getNickname() ?></h5>
+                    <a href="index.php?route=playerDetails&player_id=<?= $player -> getId() ?>"><button type="button">Découvrez <?= $player -> getNickname() ?></button></a>
+                </div>
+            <?php } ?>
+        <?php } ?>
     </div>
 </main>

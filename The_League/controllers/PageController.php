@@ -52,7 +52,7 @@
             $ppm = new PlayerPerfManager();
             $intId = intval($id);
             
-            $data = ["player" => $pm -> findOne($intId), "players" => $pm -> findAll(), "perfs" => $ppm -> findOne($intId)];
+            $data = ["player" => $pm -> findOne($intId), "players" => $pm -> findAll(), "perfs" => $ppm -> findAll()];
             
             $this -> render("playerDetails", $data);
         }
