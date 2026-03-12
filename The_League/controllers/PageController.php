@@ -41,9 +41,9 @@
         
         public function teamDetails(string $id){
             $tm = new TeamsManager();
+            $pm = new PlayerManager();
             $intId = intval($id);
-            $data = $tm -> findOne($intId);
-            
+            $data = ["team" => $tm -> findOne($intId), "players" => $pm -> findAll()];
             $this -> render("teamDetails", $data);
         }
         
