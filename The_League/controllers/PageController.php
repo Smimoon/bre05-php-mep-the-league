@@ -29,7 +29,29 @@
             
             $this -> render("players", $data);
         }
-    
+        
+        public function matchs(){
+            $mm = new MatchManager();
+            $data = $mm -> findAll();
+            
+            $this -> render("matchs", $data);
+        }
+        
+        public function teamDetails(string $id){
+            $tm = new TeamsManager();
+            $intId = intval($id);
+            $data = $tm -> findOne($intId);
+            
+            $this -> render("teamDetails", $data);
+        }
+        
+        public function playerDetails(string $id){
+            $pm = new PlayerManager();
+            $intId = intval($id);
+            $data = $pm -> findOne($intId);
+            
+            $this -> render("playerDetails", $data);
+        }
         
         public function notFound(){
             $this -> render("notFound", []);

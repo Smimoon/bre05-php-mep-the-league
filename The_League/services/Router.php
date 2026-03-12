@@ -19,6 +19,14 @@
                     $ctrl = new PageController();
                     $ctrl -> players();
                 }
+                else if($_GET["route"] === "teamDetails" && $_GET["team_id"]){
+                    $ctrl = new PageController();
+                    $ctrl -> teamDetails($_GET["team_id"]);
+                }
+                else if($_GET["route"] === "playerDetails" && $_GET["player_id"]){
+                    $ctrl = new PageController();
+                    $ctrl -> playerDetails($_GET["player_id"]);
+                }
                 else{
                     $ctrl = new PageController();
                     $ctrl -> notFound();
