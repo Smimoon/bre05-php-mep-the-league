@@ -4,13 +4,13 @@
     
         public function __construct()
         {
-            $host = "db.3wa.io";
+            $host = "sql113.infinityfree.com";
             $port = "3306";
-            $dbname = "simonlaroche_the_league";
+            $dbname = "if0_41430525_simon_laroche_mep_the_league";
             $connexionString = "mysql:host=$host;port=$port;dbname=$dbname;charset=utf8";
     
-            $user = "simonlaroche";
-            $password = "8d907e25f2f03cd13dc353d2ae9f5891";
+            $user = "if0_41430525";
+            $password = "As7jHfrVX7Ex";
     
             $this->db = new PDO(
                 $connexionString,
@@ -19,4 +19,5 @@
             );
         }
     }
+?>
 ?>
