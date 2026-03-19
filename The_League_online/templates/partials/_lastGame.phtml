@@ -1,0 +1,9 @@
+<section class="matchALaUne">
+    <h3>Le dernier match</h3>
+    <div class="match-grid">
+        <h4><?= $data["games"]->getName() ?></h4>
+        <p><?=$data["games"]->getDate()?></p>
+        <img src="<?=$data["team"][4]->getLogo()?>" alt ="logo de <?= $data["team"][4] -> getName() ?>" class="winner">
+        <img src="<?=$data["team"][0]->getLogo()?>" alt ="logo de <?= $data["team"][0] -> getName() ?>">
+    </div>
+</section>
