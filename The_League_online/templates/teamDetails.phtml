@@ -1,0 +1,15 @@
+
+<main class="teamDetails">
+    <h2><?= $data["team"]->getName()?></h2>
+    <div class="grid-players">
+        <?php foreach($data["players"] as $player) { ?>
+            <?php if($player->getTeam() === $data["team"]->getName()) { ?>
+            <div class="card-player">
+                <img src="<?= $player->getPortrait() ?>" alt="Portrait de <?= $player->getNickname()?>">
+                <h3><?= $player->getNickname()?></h3>
+                <a href="index.php?route=playerDetails&player_id=<?=$player->getId()?>"><button type="button">Découvrez <?= $player -> getNickname() ?></button></a>
+            </div>
+            <?php } ?>
+        <?php } ?>
+    </div>
+</main>

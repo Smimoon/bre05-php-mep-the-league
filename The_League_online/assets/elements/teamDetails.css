@@ -1,0 +1,45 @@
+.teamDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem auto;
+    width: 65%;
+    h2{
+        color: var(--pink);
+        font-family: "Ubuntu";
+        margin-bottom: 5rem;
+    }
+    .grid-players{
+        display: grid;
+        grid-template: 1fr 1fr/ 1fr 1fr 1fr;
+        width: 100%;
+        gap: 5rem;
+        .card-player{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1.8rem;
+            img{
+                width: 100%;
+        }
+        h3{
+            color:var(--pink);
+            text-decoration:none;
+        }
+        button{
+                font-family: "Ubuntu";
+                text-transform: uppercase;
+                font-size: 1.6rem;
+                padding: 1.5rem;
+                border-radius: 1rem;
+                background: none;
+                border: 1px solid var(--white);
+                color: var(--white);
+            }
+            button:hover{
+                cursor: pointer;
+            }
+}

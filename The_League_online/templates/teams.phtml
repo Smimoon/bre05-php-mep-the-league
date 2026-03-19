@@ -1,0 +1,13 @@
+<main class="teams">
+    <h2>les teams de la league</h2>
+    <div class="grid-teams">
+        <?php foreach($data as $team) { ?>
+            <div class="card-team">
+                <img src="<?= $team -> getLogo() ?>" alt="Logo de <?= $team -> getName() ?>">
+                <h5><?= $team -> getName() ?></h5>
+                <p><?= $team -> getDescription() ?></p>
+                <a href="index.php?route=teamDetails&team_id=<?= $team->getId()?>"><button type="button">Découvrez <?= $team -> getName() ?></button></a>
+            </div>
+        <?php } ?>
+    </div>
+</main>
