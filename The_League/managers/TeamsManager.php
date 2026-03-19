@@ -31,7 +31,11 @@
         }
         public function findAll() : array
         {
-            $query = $this->db->prepare('SELECT teams.* FROM teams JOIN media ON media.id = teams.logo ');
+            $query = $this->db->prepare('
+                SELECT teams.*, media.url
+                FROM teams 
+                JOIN media 
+                ON media.id = teams.logo ');
             
             $query -> execute();
             $results = $query -> fetchAll(PDO::FETCH_ASSOC);

@@ -14,7 +14,7 @@
             </th>
             <tr>
                 <?php foreach($data["perfs"] as $perf) { ?>
-                    <?php if($perf -> getPlayer() -> getId() === $data["player"] -> getId()) { {?>
+                    <?php if($perf -> getPlayer() -> getId() === $data["player"] -> getId()) { ?>
                         <td><?= $perf -> getGame() -> getTeam_1() ?></td>
                         <td><?= $perf -> getPoints() ?></td>
                         <td><?= $perf -> getAssists()?></td>
